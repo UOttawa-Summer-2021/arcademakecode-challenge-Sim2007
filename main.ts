@@ -14,6 +14,7 @@ controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
         if (lights[currentGuess] == 0) {
             redPress()
             currentGuess += 1
+            info.changeScoreBy(1)
         } else {
             wrongGuess()
         }
@@ -25,6 +26,9 @@ controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
         lightUp()
     }
 })
+function bluePress () {
+	
+}
 function setButton () {
     red = sprites.create(assets.image`redButton`, SpriteKind.Player)
     red.setPosition(80, 40)
@@ -35,6 +39,22 @@ function setButton () {
     yellow = sprites.create(assets.image`yellowButton`, SpriteKind.Player)
     yellow.setPosition(100, 60)
 }
+controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
+    if (userTurn) {
+        if (lights[currentGuess] == 2) {
+            bluePress()
+            currentGuess += 1
+        } else {
+            wrongGuess()
+        }
+    }
+    if (currentGuess == lights.length) {
+        currentGuess = 2
+        userTurn = false
+        addLight()
+        lightUp()
+    }
+})
 function lightUp () {
     for (let value of lights) {
         if (value == 0) {
@@ -42,9 +62,9 @@ function lightUp () {
         } else if (value == 1) {
             yellowPress()
         } else if (value == 2) {
-        	
+            bluePress()
         } else {
-        	
+            greenPress()
         }
     }
     userTurn = true
@@ -67,7 +87,7 @@ controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
         }
     }
     if (currentGuess == lights.length) {
-        currentGuess = 0
+        currentGuess = 1
         userTurn = false
         addLight()
         lightUp()
@@ -75,6 +95,9 @@ controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 function wrongGuess () {
     game.over(false, effects.melt)
+}
+function greenPress () {
+	
 }
 let randLight = 0
 let yellow: Sprite = null

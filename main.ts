@@ -12,9 +12,9 @@ function redPress () {
 controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
     if (userTurn) {
         if (lights[currentGuess] == 0) {
-            redPress()
             currentGuess += 1
             info.changeScoreBy(1)
+            redPress()
         } else {
             wrongGuess()
         }
@@ -27,7 +27,12 @@ controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
     }
 })
 function bluePress () {
-	
+    blue.setImage(assets.image`blueButtonPush`)
+    blue.startEffect(effects.fountain, 500)
+    music.playTone(262, music.beat(BeatFraction.Whole))
+    pause(500)
+    blue.setImage(assets.image`blueButton`)
+    pause(500)
 }
 function setButton () {
     red = sprites.create(assets.image`redButton`, SpriteKind.Player)
@@ -42,8 +47,9 @@ function setButton () {
 controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
     if (userTurn) {
         if (lights[currentGuess] == 2) {
-            bluePress()
             currentGuess += 1
+            info.changeScoreBy(1)
+            bluePress()
         } else {
             wrongGuess()
         }
@@ -71,7 +77,13 @@ function lightUp () {
     currentGuess = 0
 }
 function yellowPress () {
-	
+    let value: Sprite = null
+    yellow.setImage(assets.image`yellowButtonPush`)
+    yellow.startEffect(effects.fountain, 500)
+    music.playTone(262, music.beat(BeatFraction.Whole))
+    pause(500)
+    value.setImage(assets.image`yellowButton`)
+    pause(500)
 }
 function addLight () {
     randLight = randint(0, 3)
@@ -80,8 +92,9 @@ function addLight () {
 controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
     if (userTurn) {
         if (lights[currentGuess] == 1) {
-            yellowPress()
             currentGuess += 1
+            info.changeScoreBy(1)
+            yellowPress()
         } else {
             wrongGuess()
         }
@@ -96,13 +109,35 @@ controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
 function wrongGuess () {
     game.over(false, effects.melt)
 }
+controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
+    if (userTurn) {
+        if (lights[currentGuess] == 1) {
+            currentGuess += 1
+            info.changeScoreBy(1)
+            greenPress()
+        } else {
+            wrongGuess()
+        }
+    }
+    if (currentGuess == lights.length) {
+        currentGuess = 1
+        userTurn = false
+        addLight()
+        lightUp()
+    }
+})
 function greenPress () {
-	
+    green.setImage(assets.image`greenButtonPush`)
+    green.startEffect(effects.fountain, 500)
+    music.playTone(262, music.beat(BeatFraction.Whole))
+    pause(500)
+    green.setImage(assets.image`greenButton`)
+    pause(500)
 }
 let randLight = 0
 let yellow: Sprite = null
-let blue: Sprite = null
 let green: Sprite = null
+let blue: Sprite = null
 let currentGuess = 0
 let red: Sprite = null
 let userTurn = false

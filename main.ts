@@ -111,7 +111,7 @@ function wrongGuess () {
 }
 controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
     if (userTurn) {
-        if (lights[currentGuess] == 1) {
+        if (lights[currentGuess] == 3) {
             currentGuess += 1
             info.changeScoreBy(1)
             greenPress()
@@ -120,7 +120,7 @@ controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
         }
     }
     if (currentGuess == lights.length) {
-        currentGuess = 1
+        currentGuess = 3
         userTurn = false
         addLight()
         lightUp()

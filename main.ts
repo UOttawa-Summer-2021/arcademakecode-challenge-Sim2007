@@ -40,7 +40,7 @@ function lightUp () {
         if (value == 0) {
             redPress()
         } else if (value == 1) {
-        	
+            yellowPress()
         } else if (value == 2) {
         	
         } else {
@@ -50,10 +50,29 @@ function lightUp () {
     userTurn = true
     currentGuess = 0
 }
+function yellowPress () {
+	
+}
 function addLight () {
     randLight = randint(0, 3)
     lights.push(randLight)
 }
+controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
+    if (userTurn) {
+        if (lights[currentGuess] == 1) {
+            yellowPress()
+            currentGuess += 1
+        } else {
+            wrongGuess()
+        }
+    }
+    if (currentGuess == lights.length) {
+        currentGuess = 0
+        userTurn = false
+        addLight()
+        lightUp()
+    }
+})
 function wrongGuess () {
     game.over(false, effects.melt)
 }

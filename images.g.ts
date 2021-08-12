@@ -79,25 +79,6 @@ f 5 5 5 5 5 5 5 5 5 5 5 5 5 f .
 . . . . f f f f f f f . . . . . 
 . . . . . . . . . . . . . . . . 
 `;
-            case "image3":
-            case "greenButtonPush":return img`
-. . . . f f f f f f f . . . . . 
-. . f f 6 6 6 6 6 6 6 f f . . . 
-. f 6 6 6 6 6 6 6 6 6 6 6 f . . 
-. f 6 6 6 6 6 6 6 6 6 6 6 f . . 
-f 6 6 6 6 6 6 6 6 6 6 6 6 6 f . 
-f 6 6 6 6 6 6 6 6 6 6 6 6 6 f . 
-f 6 6 6 6 6 6 6 6 6 6 6 6 6 f . 
-f 6 6 6 6 6 6 6 6 6 6 6 6 6 f . 
-f 6 6 6 6 6 6 6 6 6 6 6 6 6 f . 
-f 6 6 6 6 6 6 6 6 6 6 6 6 6 f . 
-f 6 6 6 6 6 6 6 6 6 6 6 6 6 f . 
-. f 6 6 6 6 6 6 6 6 6 6 6 f . . 
-. f 6 6 6 6 6 6 6 6 6 6 6 f . . 
-. . f f 6 6 6 6 6 6 6 f f . . . 
-. . . . f f f f f f f . . . . . 
-. . . . . . . . . . . . . . . . 
-`;
             case "image4":
             case "blueButtonPush":return img`
 . . . . f f f f f f f . . . . . 
@@ -117,22 +98,22 @@ f 9 9 9 9 9 9 9 9 9 9 9 9 9 f .
 . . . . f f f f f f f . . . . . 
 . . . . . . . . . . . . . . . . 
 `;
-            case "image8":
-            case "yellowButtonPush":return img`
+            case "image3":
+            case "greenButtonPush":return img`
 . . . . f f f f f f f . . . . . 
-. . f f 4 4 4 4 4 4 4 f f . . . 
-. f 4 4 4 4 4 4 4 4 4 4 4 f . . 
-. f 4 4 4 4 4 4 4 4 4 4 4 f . . 
-f 4 4 4 4 4 4 4 4 4 4 4 4 4 f . 
-f 4 4 4 4 4 4 4 4 4 4 4 4 4 f . 
-f 4 4 4 4 4 4 4 4 4 4 4 4 4 f . 
-f 4 4 4 4 4 4 4 4 4 4 4 4 4 f . 
-f 4 4 4 4 4 4 4 4 4 4 4 4 4 f . 
-f 4 4 4 4 4 4 4 4 4 4 4 4 4 f . 
-f 4 4 4 4 4 4 4 4 4 4 4 4 4 f . 
-. f 4 4 4 4 4 4 4 4 4 4 4 f . . 
-. f 4 4 4 4 4 4 4 4 4 4 4 f . . 
-. . f f 4 4 4 4 4 4 4 f f . . . 
+. . f f 6 6 6 6 6 6 6 f f . . . 
+. f 6 6 6 6 6 6 6 6 6 6 6 f . . 
+. f 6 6 6 6 6 6 6 6 6 6 6 f . . 
+f 6 6 6 6 6 6 6 6 6 6 6 6 6 f . 
+f 6 6 6 6 6 6 6 6 6 6 6 6 6 f . 
+f 6 6 6 6 6 6 6 6 6 6 6 6 6 f . 
+f 6 6 6 6 6 6 6 6 6 6 6 6 6 f . 
+f 6 6 6 6 6 6 6 6 6 6 6 6 6 f . 
+f 6 6 6 6 6 6 6 6 6 6 6 6 6 f . 
+f 6 6 6 6 6 6 6 6 6 6 6 6 6 f . 
+. f 6 6 6 6 6 6 6 6 6 6 6 f . . 
+. f 6 6 6 6 6 6 6 6 6 6 6 f . . 
+. . f f 6 6 6 6 6 6 6 f f . . . 
 . . . . f f f f f f f . . . . . 
 . . . . . . . . . . . . . . . . 
 `;
@@ -152,6 +133,25 @@ f 3 3 3 3 3 3 3 3 3 3 3 3 3 f .
 . f 3 3 3 3 3 3 3 3 3 3 3 f . . 
 . f 3 3 3 3 3 3 3 3 3 3 3 f . . 
 . . f f 3 3 3 3 3 3 3 f f . . . 
+. . . . f f f f f f f . . . . . 
+. . . . . . . . . . . . . . . . 
+`;
+            case "image8":
+            case "yellowButtonPush":return img`
+. . . . f f f f f f f . . . . . 
+. . f f d d d d d d d f f . . . 
+. f d d d d d d d d d d d f . . 
+. f d d d d d d d d d d d f . . 
+f d d d d d d d d d d d d d f . 
+f d d d d d d d d d d d d d f . 
+f d d d d d d d d d d d d d f . 
+f d d d d d d d d d d d d d f . 
+f d d d d d d d d d d d d d f . 
+f d d d d d d d d d d d d d f . 
+f d d d d d d d d d d d d d f . 
+. f d d d d d d d d d d d f . . 
+. f d d d d d d d d d d d f . . 
+. . f f d d d d d d d f f . . . 
 . . . . f f f f f f f . . . . . 
 . . . . . . . . . . . . . . . . 
 `;
